@@ -1,0 +1,45 @@
+#: import utils kivy.utils
+
+<MyLayout>:
+    GridLayout:
+        cols: 1
+        size: root.size
+        pos_hint: {'top': 1}
+        canvas.before:
+            Color:
+                rgba: utils.get_color_from_hex('#323232')
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        GridLayout:
+            cols: 2
+            size_hint_y: None
+            height: 59
+            spacing: 10
+            padding: 10
+
+            TextInput:
+                id: text_input
+                multiline: False
+                font_size: 20
+                background_color: utils.get_color_from_hex('#C8C8C8')
+                hint_text: 'Enter your text here'
+                focus: True
+
+            Button:
+                text: 'Submit'
+                size_hint_x: None
+                width: 200
+                on_press: root.press()
+                background_normal: ''
+                background_color: utils.get_color_from_hex('#0000FF')
+
+        Label:
+            id: label
+            font_size: 15
+            size_hint_y: None
+            height: self.texture_size[1]
+            text_size: self.width, None
+            halign: 'left'
+            valign: 'top'
