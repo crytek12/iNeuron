@@ -1,0 +1,24 @@
+2023-01-02 12:33:31,978 this is my info log
+2023-01-02 12:33:31,979 this is my warning log
+2023-01-02 12:33:31,979 this is my debug log
+2023-01-02 12:39:00,034 this is my info log
+2023-01-02 12:39:00,035 this is my warning log
+2023-01-02 12:39:00,035 this is my debug log
+2023-01-02 12:40:47,534 INFO this is my info log
+2023-01-02 12:40:47,535 WARNING this is my warning log
+2023-01-02 12:40:47,535 DEBUG this is my debug log
+2023-01-02 12:44:03,453 DEBUG pickle loaded: C:\Users\tejan\anaconda3\envs\ineuron\Lib\logging\__init__.py
+2023-01-02 12:44:03,729 DEBUG pickle loaded: C:\Users\tejan\anaconda3\envs\ineuron\Lib\site-packages\jedi\third_party\typeshed\stdlib\3\builtins.pyi
+2023-01-02 12:44:03,734 DEBUG pickle loaded: C:\Users\tejan\anaconda3\envs\ineuron\Lib\site-packages\jedi\third_party\typeshed\stdlib\3\sys.pyi
+2023-01-02 12:48:08,412 ERROR this is my error log
+2023-01-02 12:51:58,137 INFO this is my info log
+2023-01-02 12:51:58,137 WARNING this is my warning log
+2023-01-02 12:51:58,138 ERROR this is my error log
+2023-01-02 13:02:22,930 INFO this is my info log
+2023-01-02 13:02:22,930 WARNING this is my warning log
+2023-01-02 13:02:22,931 DEBUG this is my debug log
+2023-01-02 13:02:22,931 ERROR this is my error log
+2023-01-02 13:05:33,896 DEBUG pickle loaded: C:\Users\tejan\anaconda3\envs\ineuron\Lib\logging\__init__.py
+2023-01-02 13:05:33,957 DEBUG pickle loaded: C:\Users\tejan\anaconda3\envs\ineuron\Lib\site-packages\jedi\third_party\typeshed\stdlib\2and3\logging\__init__.pyi
+2023-01-02 13:05:34,013 DEBUG pickle loaded: C:\Users\tejan\anaconda3\envs\ineuron\Lib\site-packages\jedi\third_party\typeshed\stdlib\3\builtins.pyi
+2023-01-02 13:05:34,020 DEBUG pickle loaded: C:\Users\tejan\anaconda3\envs\ineuron\Lib\site-packages\jedi\third_party\typeshed\stdlib\3\sys.pyi
