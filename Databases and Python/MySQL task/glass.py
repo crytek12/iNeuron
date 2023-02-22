@@ -1,32 +1,42 @@
 import mysql.connector
-import csv 
+import csv
 
-# create user 'user'@'%' identified by 'password'
 mydb = mysql.connector.connect(
-  host="localhost",
-  user="abc",
-  password="password"
+    host='localhost',
+    user='abc',
+    password='password'
 )
 
 mycursor = mydb.cursor()
 
-mycursor.execute('CREATE DATABASE glass')
-mycursor.execute('''CREATE TABLE glass.glass_table (`index` INT, RI REAL, Na REAL, Mg REAL,
-                                                    Al REAL, Si REAL, K REAL, Ca REAL,
-                                                    Ba REAL, Fe REAL, Class INT)''')
+# Creating a database called glass
+mycursor.execute('CREATE DATABASE IF NOT EXISTS glass')
 
-with open('glass.csv') as file:  
-  reader = csv.DictReader(file)
+# Creating a table called glass_table
+mycursor.execute('''CREATE TABLE IF NOT EXISTS glass.glass_table(
+    `index` INT(10), 
+    RI FLOAT(10, 5),
+    Na FLOAT(10, 5),
+    Mg FLOAT(10, 5),
+    Al FLOAT(10, 5),
+    Si FLOAT(10, 5),
+    K FLOAT(10, 5),
+    Ca FLOAT(10, 5),
+    Ba FLOAT(10, 5),
+    Fe FLOAT(10, 5),
+    Class INT(10))
+''')
 
-  for record in reader:
-    mycursor.execute('INSERT INTO glass.glass_table VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', 
-                    (record['index'], record['RI'], record['Na'], record['Mg'], record['Al'], record['Si'], record['K'], 
-                     record['Ca'], record['Ba'], record['Fe'], record['Class']))
+with open('glass.data') as file:
+    reader = csv.reader(file)
+    next(reader)
 
+    for record in reader:
+        mycursor.execute(f'INSERT INTO glass.glass_table VALUES {tuple(record)}')
+    mydb.commit()
 
-mydb.commit()
-
+# See values
 mycursor.execute('SELECT * FROM glass.glass_table')
 
 for record in mycursor:
-  print(record)
+    print(record)
